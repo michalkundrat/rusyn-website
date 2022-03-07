@@ -22,7 +22,7 @@
           <v-list-item-title>Dictionary</v-list-item-title>
         </v-list-item>
         <v-list-item>
-          <v-list-item-title>Discord - Coming soon!</v-list-item-title>
+          <v-list-item-title>More coming soon!</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
