@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LessonSubmitPlan from "../views/LessonSubmitPlan.vue";
+import Basics from "../views/Basics.vue";
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
     },
+  },
+  {
+    path: "/basics",
+    name: "basics",
+    component: Basics,
   },
 ];
 
