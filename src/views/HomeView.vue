@@ -11,7 +11,7 @@
     <v-row justify="center">
       <span class="pb-16 mb-16 px-16 text-center">
         Thank you for visiting our website! We are committed to improving and
-        allowing you to fulfil your dreams of learning Rusyn! Rusyn is a
+        allowing you to fulfil your dreams of learning Rusyn! It is a
         language that is, unfortunately, quickly dying out. It is not yet in
         danger of being extinct, but fewer and fewer people grow up speaking the
         language every year.

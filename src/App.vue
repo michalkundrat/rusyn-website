@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <v-app>
-    <v-app-bar app clipped-left>
+    <v-app-bar class="grey lighten-2" flat app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Learn</span>
