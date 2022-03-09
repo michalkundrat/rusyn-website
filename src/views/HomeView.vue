@@ -9,7 +9,7 @@
       ></v-img>
     </v-row>
     <v-row class="d-flex" justify="center" no-gutters>
-      <v-col class="ml-auto" cols=3 order="first">
+      <v-col class="mx-auto px-auto" cols=2 order="first">
         <v-img
           src="https://ih1.redbubble.net/image.2340959836.9606/st,small,507x507-pad,600x600,f8f8f8.jpg"
           width="200px"
@@ -17,7 +17,7 @@
           class="mb-n2"
         ></v-img>
       </v-col>
-      <v-col class="ml-auto" cols=3>
+      <v-col align-self="center" class="mx-auto px-auto" cols=8>
         <span class="text-center">
           Thank you for visiting our website! We are committed to improving and
           allowing you to fulfil your dreams of learning Rusyn! It is a
@@ -26,7 +26,7 @@
           language every year.
         </span>
       </v-col>
-      <v-col class="ml-auto" cols=3 order="last">
+      <v-col class="mx-auto px-auto" cols=2 order="last">
         <v-img
           src="https://ih1.redbubble.net/image.2340959836.9606/st,small,507x507-pad,600x600,f8f8f8.jpg"
           width="200px"
@@ -36,7 +36,11 @@
       </v-col>
     </v-row>
     <v-row no-gutters>
-      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nobis sint, explicabo rem nam ullam natus modi dolor aliquid perspiciatis libero? Nulla sequi dolorem at aut deleniti quod, numquam et? Dicta debitis voluptas quod laboriosam fugit commodi iure iste, voluptate minus, rem corrupti aperiam, tempora reprehenderit modi. Ipsa perspiciatis quam at? Et placeat odit perspiciatis ab beatae autem quo inventore, saepe nam expedita. Repellendus id culpa reiciendis consectetur similique, optio assumenda repellat, aut, sequi possimus ipsum. Assumenda aliquid earum libero!</span>
+      <v-col cols="3" />
+      <v-col cols="6">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate eligendi ea ad error itaque assumenda voluptate quibusdam, accusantium obcaecati dolor neque voluptatum quaerat dolorem cumque qui dicta eveniet voluptas? Possimus impedit illum minus velit quibusdam ipsum ullam, cum harum aut quasi reprehenderit optio iste consequatur aliquid libero expedita officia delectus.</span>
+      </v-col>
+      <v-col cols="3" />
     </v-row>
   </v-container>
 </template>
