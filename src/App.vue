@@ -46,6 +46,7 @@ export default {
     ],
     topitems: [
       {title: "Home", route: "/"},
+      {title: "Lesson Hub", route: "/lessons"},
       {title: "About", route: "/about"},
       {title: "Contact", route: "/contact"},
       {title: "Credits", route: "/credits"}

@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import LessonSubmitPlan from "../views/LessonSubmitPlan.vue";
 import Basics from "../views/Basics.vue";
 import Contact from "../views/Contact.vue";
+import LessonHub from "../views/LessonHub.vue";
 
 Vue.use(VueRouter);
 
@@ -37,6 +38,11 @@ const routes = [
     path: "/contact",
     name: "contact",
     component: Contact,
+  },
+  {
+    path: "/lessons",
+    name: "lessons",
+    component: LessonHub,
   },
 ];
 
