@@ -1,7 +1,10 @@
 <template>
   <div>
     <h1 class="text-center">Enjoy our lessons!</h1>
-
+    <v-layout>
+      <v-spacer />
+      <v-btn class="mr-12 grey">Add Lesson</v-btn>
+    </v-layout>
     <v-flex>
       <v-layout>
         <v-flex md4 class="pa-6" v-for="lesson in lessons" :key="lesson">
@@ -26,7 +29,8 @@
               </v-btn>
               <v-btn v-if="lesson.yturl != null" :href="lesson.yturl" rounded depressed>
                 <v-avatar>
-                  <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YT Logo">
+                  <!-- <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YT Logo"> -->
+                  <v-icon>mdi-youtube</v-icon>
                 </v-avatar>
               </v-btn>
               <v-spacer />
