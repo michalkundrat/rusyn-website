@@ -3,6 +3,7 @@
 ## How do I contribute content?
 I'm glad that you want to contribute! In order to do so, please make sure to check that your lesson is correct and of good quality,
 and then please send it to `ihavezerohealth#5451` on Discord for review and upload!
+#### Note: eventually it will be possible to upload lessons to the website directly
 
 ## How do I contribute code?
 If you're someone who knows their way around Vuetify or VueJS, a code contribution is always welcome. Please open a pull request first
