@@ -13,27 +13,29 @@
       <v-btn text class="mr-2" v-for="topitem in topitems" :key="topitem.title" rounded :to="topitem.route">{{topitem.title}}</v-btn>
       <v-spacer />
       <!-- <span>Made by Мiхал К</span> -->
+      <div id="userImage">
         <v-menu
           open-on-hover
           offset-y
           rounded="b-xl"
         >
-        <template v-slot:activator="{ on, attrs }">
-          <v-avatar id="userImage" @click="openUser()" v-on="on" v-bind="attrs" v-if="user != null"><img :src="user.image" alt="User"></v-avatar>
-        </template>
+          <template v-slot:activator="{ on, attrs }">
+            <v-avatar @click="openUser()" v-on="on" v-bind="attrs" v-if="user != null"><img :src="user.image" alt="User"></v-avatar>
+          </template>
 
-        <v-list>
-          <v-list-item>
-            <v-list-item-title>{{ user.name }}</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>{{ user.reputation }} reputation</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title>{{ user.age }} days old</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+          <v-list>
+            <v-list-item>
+              <v-list-item-title>{{ user.name }}</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>{{ user.reputation }} reputation</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>{{ user.age }} days old</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
     </v-app-bar>
     <v-navigation-drawer absolute v-model="drawer" app clipped>
       <v-list dense nav rounded>
@@ -60,8 +62,12 @@ profile:hover + hide {
   display: block;
 }
 
-@keyframes mymove {
-
+#userImage:hover {
+  animation: slideLeft 1s ease 0s 1 normal forwards;
+}
+@keyframes slideLeft {
+  0%    {left:0px}
+  100%  {left: -150px}
 }
 </style>
 

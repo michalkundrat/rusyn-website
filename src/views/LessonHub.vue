@@ -123,7 +123,7 @@ export default {
       // xhr.open("POST", "http://localhost:3000/lessons");
       // xhr.setRequestHeader('Content-Type', 'application/json');
       // xhr.send(JSON.stringify(data));
-      fetch("http://localhost:3000/lessons", {
+      fetch("http://localhost:3000/lessonRequests", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
