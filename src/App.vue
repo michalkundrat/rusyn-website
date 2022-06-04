@@ -12,8 +12,8 @@
       <v-spacer />
       <v-btn text class="mr-2" v-for="topitem in topitems" :key="topitem.title" rounded :to="topitem.route">{{topitem.title}}</v-btn>
       <v-spacer />
-      <!-- <span>Made by Мiхал К</span> -->
-      <div id="userImage">
+      <span>Made by Мiхал К</span>
+      <!-- <div id="userImage">
         <v-menu
           open-on-hover
           offset-y
@@ -35,7 +35,7 @@
             </v-list-item>
           </v-list>
         </v-menu>
-      </div>
+      </div> -->
     </v-app-bar>
     <v-navigation-drawer absolute v-model="drawer" app clipped>
       <v-list dense nav rounded>

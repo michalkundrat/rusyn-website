@@ -46,7 +46,7 @@
               </v-list-item-content>
             </v-list-item>
             <v-card-actions>
-              <v-btn v-if="lesson.link != null" :href="lesson.yturl" rounded depressed>
+              <v-btn v-if="lesson.link != null" :href="lesson.link" rounded depressed>
                 Learn
                 <v-icon class="pl-2">mdi-bank</v-icon>
               </v-btn>
@@ -57,11 +57,11 @@
                 </v-avatar>
               </v-btn>
               <v-spacer />
-              <v-btn v-if="lesson.user != null" :href="lesson.user" rounded depressed>
+              <!-- <v-btn v-if="lesson.user != null" :href="lesson.user" rounded depressed>
                 <v-avatar>
                   <v-icon>mdi-account-circle</v-icon>
                 </v-avatar>
-              </v-btn>
+              </v-btn> -->
             </v-card-actions>
           </v-card>
         </v-flex>

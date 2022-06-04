@@ -5,7 +5,7 @@ import LessonSubmitPlan from "../views/LessonSubmitPlan.vue";
 import Basics from "../views/Basics.vue";
 import Contact from "../views/Contact.vue";
 import LessonHub from "../views/LessonHub.vue";
-import PronounsLesson from "../views/PronounsLesson.vue"
+import PersonalPronounsLesson from "../views/PersonalPronounsLesson.vue"
 
 Vue.use(VueRouter);
 
@@ -46,9 +46,9 @@ const routes = [
     component: LessonHub,
   },
   {
-    path: "/pronouns",
-    name: "pronouns",
-    component: PronounsLesson,
+    path: "/personal-pronouns",
+    name: "personal-pronouns",
+    component: PersonalPronounsLesson,
   },
 ];
 

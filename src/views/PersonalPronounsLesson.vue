@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1 class="text-center text-h4 pt-2">Rusyn Pronouns</h1>
+    <h1 class="text-center text-h4 pt-2">Personal Pronouns</h1>
     <h2 class="text-h5 px-9 pb-6"><b>On this page:</b></h2>
     <v-row>
-      <v-btn @click="$vuetify.goTo('#what-are-pronouns')" rounded class="grey lighten-2 ml-9 mb-3">What are pronouns?</v-btn>
+      <v-btn @click="$vuetify.goTo('#what-are-personal-pronouns')" rounded class="grey lighten-2 ml-9 mb-3">What are pronouns?</v-btn>
       <v-btn @click="$vuetify.goTo('#personal-pronouns')" rounded class="grey lighten-2 ml-1 mb-3">Personal Pronouns</v-btn>
     </v-row>
-    <h4 id="what-are-pronouns" class="text-subtitle-1 mt-1 pt-3 px-9">A pronoun is word that can function as a noun phrase used by itself and that refers either to the participants in the discourse (e.g. I, you) or to someone or something mentioned elsewhere in the discourse (e.g. she, it, this).</h4>
-    <h6 class="text-h6 pt-1 px-9">Simplified: A word that substitutes a noun</h6>
+    <h4 id="what-are-personal-pronouns" class="text-subtitle-1 mt-1 pt-3 px-9">A pronoun is word that can function as a noun phrase used by itself and that refers either to the participants in the discourse (e.g. I, you) or to someone or something mentioned elsewhere in the discourse (e.g. she, it, this).</h4>
+    <h6 class="text-h6 pt-1 px-9">Simplified: A word that substitutes a person</h6>
     <p class="px-9">
       Rusyn pronouns are not as simple as pronouns in other languages, due to a case system, which
       is present in all Slavic languages.
@@ -25,6 +25,23 @@
       class="px-6"
     />
     <br>
+    <h2 class="text-h5 px-9">Resources:</h2>
+    <v-flex>
+      <v-layout>
+        <v-flex class="ml-6" :key="resource" v-for="resource in resources">
+          <v-card :href="resource.link" width="25%">
+            <v-card-title>{{resource.name}}</v-card-title>
+            <v-card-subtitle>{{resource.description}}</v-card-subtitle>
+            <v-card-actions>
+              <v-btn :href="resource.link" depressed rounded>
+                Visit <v-icon class="pl-1">mdi-exit-to-app</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-flex>
+    <br>
     <v-row>
       <v-spacer />
       <v-btn class="grey lighten-1 mr-16 py-6" large>Next Lesson <v-icon>mdi-skip-next-circle-outline</v-icon></v-btn>
@@ -35,9 +52,16 @@
 
 <script>
 export default {
-  name: "PronounsLesson",
+  name: "PersonalPronounsLesson",
   data () {
     return {
+      resources: [
+        {
+          name: "Anki Deck",
+          description: "Rusyn personal pronouns Anki Deck",
+          link: "https://ankiweb.net/shared/info/1627107564",
+        }
+      ],
       headers: [
         {
           text: "English",
@@ -82,7 +106,7 @@ export default {
         },
         {
           english: "she",
-          nominative: "она вна",
+          nominative: "она, вна",
           genitive: "є, до нёй",
           dative: "їй, ку нїй",
           accusative: "єй, ї, на ню",
