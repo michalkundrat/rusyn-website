@@ -2,7 +2,7 @@
   <div>
     <v-layout>
       <v-spacer />
-      <v-btn v-if="!(showForm)" @click="showForm = !showForm" rounded class="mr-12 mt-6 grey py-4">Add Lesson<v-icon class="pl-2">mdi-plus-circle</v-icon></v-btn>
+      <v-btn v-if="!(showForm)" @click="showForm = !showForm" rounded class="mr-12 mt-6 grey py-4">Request Lesson<v-icon class="pl-2">mdi-plus-circle</v-icon></v-btn>
       <v-btn v-if="showForm" @click="showForm = !showForm" rounded class="mr-12 mt-6 grey py-4">Close<v-icon class="pl-2">mdi-location-exit</v-icon></v-btn>
     </v-layout>
     <!-- <v-container v-if="showForm && checkCookie('user')"> -->
@@ -11,13 +11,11 @@
       <v-form ref="newlesson" v-model="newlesson">
         <v-text-field v-model="title" label="Title*" />
         <v-text-field v-model="description" label="Description*" />
-        <v-text-field v-model="content" label="Content" />
-        <v-text-field v-model="ytlink" label="YouTube Link" />
-        <v-text-field v-model="time" label="Estimated Time" />
-        <v-select v-model="level" :items="levels" />
-        <v-btn @click="submitLesson()">Submit Lesson</v-btn>
+        <v-btn @click="submitLesson()">Request Lesson</v-btn>
       </v-form>
     </v-container>
+    <h4 class="ml-9 mb-2 text-h5">Sort By:</h4>
+    <v-select v-on:change="handleSort" v-model="sorting" label="Difficulty" class="ml-9" style="width: 15%;" outlined :items="orderNames" />
     <v-flex>
       <v-layout>
         <v-flex md4 class="pa-6" v-for="lesson in lessons" :key="lesson">
@@ -34,7 +32,7 @@
                   <v-row>
                     <span class="pl-3">{{lesson.level}}</span>
                     <v-spacer />
-                    <span class="pr-3">{{lesson.time}}</span>
+                    <span class="pr-3">{{lesson.time}} minute read</span>
                   </v-row>
                 </div>
                 <v-list-item-title class="text-h5 mb-1">
@@ -77,6 +75,7 @@ export default {
   data () {
     return {
       showForm: false,
+      orderNames: ["Difficulty", "Time"],
       // lessons: [
       //   {
       //     title: "Cyrillic  Script",
@@ -97,6 +96,41 @@ export default {
     }
   },
   methods: {
+    handleSort: function(selection) {
+      switch(selection) {
+        case "Difficulty":
+          this.difficultySort();
+          break;
+        case "Time":
+          this.timeSort();
+          break;
+      };
+    },
+    difficultySort: function() {
+      var lessonList;
+      for (level in this.levels) {
+        for (lesson in this.lessons) {
+          if (lesson.level.includes(level)) {
+            lessonList.push(lesson);
+          };
+        };
+      };
+      this.lessons = lessonList;
+    },
+    timeSort: function() {
+      var sorted = false;
+      var lessonList;
+      while (!sorted) {
+        sorted = true;
+        for (let i = 0; i < this.lessons.length; i++) {
+          if (this.lessons[i].time > this.lessons[i+1].time) {
+            var temp = this.lessons[i];
+            this.lessons[i] = this.lessons[i+1];
+            this.lessons[i+1] = temp;
+          };
+        };
+      };
+    },
     submitLesson: function() {
       // this.lessons.push(
       //   {

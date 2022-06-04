@@ -2,9 +2,17 @@
   "lessons": [
     {
       "id": 1,
+      "title": "Cyrillic Alphabet",
+      "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
+      "time": 5,
+      "level": "Beginner",
+      "link": "http://localhost:8080/#/cyrillic-alphabet"
+    },
+    {
+      "id": 2,
       "title": "Personal Pronouns",
       "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
-      "time": "5 minute read",
+      "time": 2,
       "level": "Beginner/Intermediate",
       "link": "http://localhost:8080/#/personal-pronouns"
     }
