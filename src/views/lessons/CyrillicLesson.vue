@@ -37,6 +37,12 @@
                 </v-flex>
             </v-row>
         </v-container>
+
+        <v-container>
+            <v-row>
+
+            </v-row>
+        </v-container>
     </div>
 </template>
 
@@ -44,8 +50,7 @@
 export default {
     name: "CyrillicLesson",
     data () {
-        return {
-            alphabet: [
+        const alphabet = [
                 {
                     cyrillic: "Аа",
                     name: "а",
@@ -261,9 +266,12 @@ export default {
                     name: "твардый знак",
                     romanisation: "\"",
                     ipa: ""
-                },
-            ]
-        }
+                }
+            ];
+        return {
+            alphabet: alphabet,
+            same: [alphabet[0], alphabet[6], alphabet[11], alphabet[16], alphabet[17], alphabet[19], alphabet[21], alphabet[22]],
+        };
     }
 }
 </script>
