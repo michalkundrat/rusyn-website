@@ -6,7 +6,7 @@
       "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
       "time": 5,
       "level": "Beginner",
-      "link": "http://localhost:8080/#/cyrillic-alphabet"
+      "link": "http://localhost:8080/#/lessons/cyrillic"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
       "time": 2,
       "level": "Beginner/Intermediate",
-      "link": "http://localhost:8080/#/personal-pronouns"
+      "link": "http://localhost:8080/#/lessons/personal-pronouns"
     }
   ],
   "lessonRequests": [],

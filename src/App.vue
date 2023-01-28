@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <v-app>
-    <v-app-bar class="grey lighten-2" flat app clipped-left>
+    <v-app-bar style="overflow-x:auto; white-space: nowrap;" class="grey lighten-2" flat app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Learn</span>
@@ -12,7 +12,7 @@
       <v-spacer />
       <v-btn text class="mr-2" v-for="topitem in topitems" :key="topitem.title" rounded :to="topitem.route">{{topitem.title}}</v-btn>
       <v-spacer />
-      <span>Made by Мiхал К</span>
+      <span>Created by Мiхал Кундрат</span>
       <!-- <div id="userImage">
         <v-menu
           open-on-hover

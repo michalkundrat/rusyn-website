@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="text-center text-h4 pt-2">Personal Pronouns</h1>
+    <h1 class="text-center text-h4 pt-4">Personal Pronouns</h1>
     <h2 class="text-h5 px-9 pb-6"><b>On this page:</b></h2>
     <v-row>
       <v-btn @click="$vuetify.goTo('#what-are-personal-pronouns')" rounded class="grey lighten-2 ml-9 mb-3">What are pronouns?</v-btn>
-      <v-btn @click="$vuetify.goTo('#personal-pronouns')" rounded class="grey lighten-2 ml-1 mb-3">Personal Pronouns</v-btn>
+      <v-btn @click="$vuetify.goTo('#personal-pronouns')" rounded class="grey lighten-2 ml-2 mb-3">Personal Pronouns</v-btn>
     </v-row>
     <h4 id="what-are-personal-pronouns" class="text-subtitle-1 mt-1 pt-3 px-9">A pronoun is word that can function as a noun phrase used by itself and that refers either to the participants in the discourse (e.g. I, you) or to someone or something mentioned elsewhere in the discourse (e.g. she, it, this).</h4>
     <h6 class="text-h6 pt-1 px-9">Simplified: A word that substitutes a person</h6>
@@ -28,13 +28,14 @@
     <h2 class="text-h5 px-9">Resources:</h2>
     <v-flex>
       <v-layout>
-        <v-flex class="ml-6" :key="resource" v-for="resource in resources">
+        <v-flex md8 class="ml-6 pl-3 pt-2" :key="resource" v-for="resource in resources">
           <v-card :href="resource.link" width="25%">
             <v-card-title>{{resource.name}}</v-card-title>
             <v-card-subtitle>{{resource.description}}</v-card-subtitle>
             <v-card-actions>
+              <v-spacer />
               <v-btn :href="resource.link" depressed rounded>
-                Visit <v-icon class="pl-1">mdi-exit-to-app</v-icon>
+                Visit <v-icon class="pl-2">mdi-exit-to-app</v-icon>
               </v-btn>
             </v-card-actions>
           </v-card>

@@ -2,10 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LessonSubmitPlan from "../views/LessonSubmitPlan.vue";
-import Basics from "../views/Basics.vue";
+import Basics from "../views/lessons/Basics.vue";
 import Contact from "../views/Contact.vue";
 import LessonHub from "../views/LessonHub.vue";
-import PersonalPronounsLesson from "../views/PersonalPronounsLesson.vue"
+import PersonalPronounsLesson from "../views/lessons/PersonalPronounsLesson.vue"
+import CyrillicLesson from "../views/lessons/CyrillicLesson.vue"
 
 Vue.use(VueRouter);
 
@@ -16,7 +17,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/how-to-submit-lesson",
+    path: "/how-to-submit-lessons",
     name: "lessonsubmitplan",
     component: LessonSubmitPlan,
   },
@@ -46,9 +47,14 @@ const routes = [
     component: LessonHub,
   },
   {
-    path: "/personal-pronouns",
+    path: "/lessons/personal-pronouns",
     name: "personal-pronouns",
     component: PersonalPronounsLesson,
+  },
+  {
+    path: "/lessons/cyrillic",
+    name: "cyrillic",
+    component: CyrillicLesson,
   },
 ];
 

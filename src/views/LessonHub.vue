@@ -18,8 +18,8 @@
     <v-select v-on:change="handleSort" v-model="sorting" label="Difficulty" class="ml-9" style="width: 15%;" outlined :items="orderNames" />
     <v-flex>
       <v-layout>
-        <v-flex md4 class="pa-6" v-for="lesson in lessons" :key="lesson">
-           <v-card :href="lesson.link" class="card-container">
+        <v-flex md3 class="pa-6" v-for="lesson in lessons" :key="lesson.id">
+           <v-card :href="lesson.link" :width=cardWidth class="card-container">
             <v-list-item three-line>
               <v-list-item-content>
                 <!-- <v-layout>
@@ -28,7 +28,7 @@
                     <span class="pl-14">{{lesson.time}}</span>
                   </div>
                 </v-layout> -->
-                <div class="text-overline mb-2">
+                <div class="text-overline mb-2 mt-1">
                   <v-row>
                     <span class="pl-3">{{lesson.level}}</span>
                     <v-spacer />
@@ -44,10 +44,6 @@
               </v-list-item-content>
             </v-list-item>
             <v-card-actions>
-              <v-btn v-if="lesson.link != null" :href="lesson.link" rounded depressed>
-                Learn
-                <v-icon class="pl-2">mdi-bank</v-icon>
-              </v-btn>
               <v-btn v-if="lesson.yturl != null" :href="lesson.yturl" rounded depressed>
                 <v-avatar>
                   <!-- <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YT Logo"> -->
@@ -55,6 +51,10 @@
                 </v-avatar>
               </v-btn>
               <v-spacer />
+              <v-btn class="pl-3" v-if="lesson.link != null" :href="lesson.link" rounded depressed>
+                Learn
+                <v-icon class="pl-2">mdi-bank</v-icon>
+              </v-btn>
               <!-- <v-btn v-if="lesson.user != null" :href="lesson.user" rounded depressed>
                 <v-avatar>
                   <v-icon>mdi-account-circle</v-icon>
@@ -167,10 +167,22 @@ export default {
         .then(res => console.log(res));
     },
   },
+  computed: {
+    cardWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 220
+        case 'sm': return 400
+        case 'md': return 500
+        case 'lg': return 600
+        case 'xl': return 800
+      }
+    },
+  },
   mounted() {
     fetch("http://localhost:3000/lessons")
       .then(res => res.json())
       .then(data => this.lessons = data)
+      .then(console.log(JSON.stringify(this.lessons)))
       .catch(err => console.log(err.message))
   }
   // firebase: {
