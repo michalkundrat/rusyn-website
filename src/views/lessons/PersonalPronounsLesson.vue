@@ -15,7 +15,7 @@
     </p>
     <p class="px-9 pt-3">
       Note: where items are separated by a "/" character, the word on the left
-      is stressed, and the word on the right is stressed.
+      is full (stressed), and the word on the right is short (enclitic/unstressed).
     </p>
     <v-data-table
       id="personal-pronouns"

@@ -87,7 +87,24 @@ export default {
       //     yturl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       //   }
       // ],
-      lessons: [],
+      lessons: [
+        {
+          "id": 1,
+          "title": "Cyrillic Alphabet",
+          "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
+          "time": 15,
+          "level": "Beginner",
+          "link": "http://learnrusyn.xyz/#/lessons/cyrillic"
+        },
+        {
+          "id": 2,
+          "title": "Personal Pronouns",
+          "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
+          "time": 2,
+          "level": "Beginner/Intermediate",
+          "link": "http://learnrusyn.xyz/#/lessons/personal-pronouns"
+        }
+      ],
       levels: [
         "Beginner",
         "Intermediate",
@@ -178,13 +195,13 @@ export default {
       }
     },
   },
-  mounted() {
-    fetch("http://localhost:3000/lessons")
-      .then(res => res.json())
-      .then(data => this.lessons = data)
-      .then(console.log(JSON.stringify(this.lessons)))
-      .catch(err => console.log(err.message))
-  }
+  // mounted() {
+  //   fetch("http://localhost:3000/lessons")
+  //     .then(res => res.json())
+  //     .then(data => this.lessons = data)
+  //     .then(console.log(JSON.stringify(this.lessons)))
+  //     .catch(err => console.log(err.message))
+  // }
   // firebase: {
   //   lessons: db.ref('0'),
   // },
