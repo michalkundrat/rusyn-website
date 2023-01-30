@@ -143,9 +143,10 @@
                 </v-col>
                 <v-col cols="3">
                     <p class="text-body-1">
-                        This sound is present in English, though not used very commonly.
-                        However, it looks like a number 3, so it may help you to associate
-                        the number 3 with the sound z/з!
+                        This sound is present in English, which may make it easier to learn - 
+                        think of common words like "is" and "use".
+                        To add, it looks like a number 3, so it may help you to associate
+                        the number 3 with the sound z/з.
                     </p>
                 </v-col>
             </v-row>
@@ -280,22 +281,6 @@
                 </v-col>
 
                 <v-col justify="center" align="center" cols="2">
-                    <p style="font-size: 5em;">Ёё</p>
-                </v-col>
-                <v-col cols="3">
-                    <p class="text-body-1">
-                        Pronounced like the "yo" in "your". This one is quite
-                        difficult, as this letter is ommitted, and typed as
-                        Ее instead - mostly because natives are too lazy to
-                        reach for the Ёё key!
-                        To add to this, some people dispute its use entirely,
-                        but that's a conversation for another day.
-                    </p>
-                </v-col>
-            </v-row>
-
-            <v-row>
-                <v-col justify="center" align="center" cols="2">
                     <p style="font-size: 5em;">Щщ</p>
                 </v-col>
                 <v-col cols="3">
@@ -305,7 +290,9 @@
                         already know the "ш" sound.
                     </p>
                 </v-col>
+            </v-row>
 
+            <v-row>
                 <v-col justify="center" align="center" cols="2">
                     <p style="font-size: 5em;">Юю</p>
                 </v-col>
@@ -318,9 +305,7 @@
                         not as easily confused as some of the other letters.
                     </p>
                 </v-col>
-            </v-row>
 
-            <v-row>
                 <v-col justify="center" align="center" cols="2">
                     <p style="font-size: 5em;">Яя</p>
                 </v-col>
@@ -393,7 +378,7 @@
         </v-container>
 
         <v-container>
-            <p class="text-h5">"Modifiers"</p>
+            <p class="text-h5">"Orthographic Devices"</p>
             <p class="body-1">
                 These characters aren't even sounds! They serve a different
                 purpose - to alter the sound of the preceding letter.
@@ -426,6 +411,24 @@
                 </v-col>
             </v-row>
         </v-container>
+
+        <h2 class="text-h5 px-9">Resources:</h2>
+        <v-flex>
+        <v-layout>
+            <v-flex md8 class="ml-6 pl-3 pt-2 mb-16" :key="resource" v-for="resource in resources">
+            <v-card :href="resource.link" width="25%">
+                <v-card-title>{{resource.name}}</v-card-title>
+                <v-card-subtitle>{{resource.description}}</v-card-subtitle>
+                <v-card-actions>
+                <v-spacer />
+                <v-btn :href="resource.link" depressed rounded>
+                    Visit <v-icon class="pl-2">mdi-exit-to-app</v-icon>
+                </v-btn>
+                </v-card-actions>
+            </v-card>
+            </v-flex>
+        </v-layout>
+        </v-flex>
     </div>
 </template>
 
@@ -654,7 +657,14 @@ export default {
         return {
             alphabet: alphabet,
             same: [alphabet[0], alphabet[1], alphabet[6], alphabet[11], alphabet[16], alphabet[18], alphabet[19], alphabet[20], alphabet[22]],
-            sameButDifferent: [alphabet[2], alphabet[19], alphabet[22], alphabet[23], alphabet[25], alphabet[27], alphabet[30]]
+            sameButDifferent: [alphabet[2], alphabet[19], alphabet[22], alphabet[23], alphabet[25], alphabet[27], alphabet[30]],
+            resources: [
+                {
+                    name: "Anki deck",
+                    description: "Rusyn Cyrillic script flashcards",
+                    link: "https://ankiweb.net/shared/info/719683895"
+                }
+            ]
         };
     }
 }

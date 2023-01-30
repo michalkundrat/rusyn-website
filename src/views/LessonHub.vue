@@ -2,7 +2,7 @@
   <div>
     <v-layout>
       <v-spacer />
-      <v-btn v-if="!(showForm)" @click="showForm = !showForm" rounded class="mr-12 mt-6 grey py-4">Request Lesson<v-icon class="pl-2">mdi-plus-circle</v-icon></v-btn>
+      <v-btn disabled v-if="!(showForm)" @click="showForm = !showForm" rounded class="mr-12 mt-6 grey py-4">Request Lesson<v-icon class="pl-2">mdi-plus-circle</v-icon></v-btn>
       <v-btn v-if="showForm" @click="showForm = !showForm" rounded class="mr-12 mt-6 grey py-4">Close<v-icon class="pl-2">mdi-location-exit</v-icon></v-btn>
     </v-layout>
     <!-- <v-container v-if="showForm && checkCookie('user')"> -->
@@ -15,7 +15,7 @@
       </v-form>
     </v-container>
     <h4 class="ml-9 mb-2 text-h5">Sort By:</h4>
-    <v-select v-on:change="handleSort" v-model="sorting" label="Difficulty" class="ml-9" style="width: 15%;" outlined :items="orderNames" />
+    <v-select disabled v-on:change="handleSort" v-model="sorting" label="Difficulty" class="ml-9" style="width: 15%;" outlined :items="orderNames" />
     <v-flex>
       <v-layout>
         <v-flex md3 class="pa-6" v-for="lesson in lessons" :key="lesson.id">
@@ -136,7 +136,6 @@ export default {
     },
     timeSort: function() {
       var sorted = false;
-      var lessonList;
       while (!sorted) {
         sorted = true;
         for (let i = 0; i < this.lessons.length; i++) {

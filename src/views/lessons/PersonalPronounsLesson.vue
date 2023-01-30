@@ -28,7 +28,7 @@
     <h2 class="text-h5 px-9">Resources:</h2>
     <v-flex>
       <v-layout>
-        <v-flex md8 class="ml-6 pl-3 pt-2" :key="resource" v-for="resource in resources">
+        <v-flex md8 class="ml-6 pl-3 pt-2 mb-16" :key="resource" v-for="resource in resources">
           <v-card :href="resource.link" width="25%">
             <v-card-title>{{resource.name}}</v-card-title>
             <v-card-subtitle>{{resource.description}}</v-card-subtitle>
@@ -42,12 +42,12 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <br>
+    <!-- <br>
     <v-row>
       <v-spacer />
       <v-btn class="grey lighten-1 mr-16 py-6" large>Next Lesson <v-icon>mdi-skip-next-circle-outline</v-icon></v-btn>
     </v-row>
-    <br>
+    <br> -->
   </div>
 </template>
 
