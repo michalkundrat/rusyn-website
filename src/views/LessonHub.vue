@@ -15,10 +15,10 @@
       </v-form>
     </v-container>
     <h4 class="ml-9 mb-2 text-h5">Sort By:</h4>
-    <v-select disabled v-on:change="handleSort" v-model="sorting" label="Difficulty" class="ml-9" style="width: 15%;" outlined :items="orderNames" />
+    <v-select v-on:change="swapSorting" v-model="this.sortBy" dense class="ml-9" style="width: 15%;" outlined :items="orderNames" />
     <v-flex>
       <v-layout>
-        <v-flex md3 class="pa-6" v-for="lesson in lessons" :key="lesson.id">
+        <v-flex md3 class="pa-6" v-for="lesson in handleSort" :key="lesson.id">
            <v-card :href="lesson.link" :width=cardWidth class="card-container">
             <v-list-item three-line>
               <v-list-item-content>
@@ -75,6 +75,7 @@ export default {
   data () {
     return {
       showForm: false,
+      sortBy: "Difficulty",
       orderNames: ["Difficulty", "Time"],
       // lessons: [
       //   {
@@ -87,7 +88,7 @@ export default {
       //     yturl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       //   }
       // ],
-      lessons: [
+      difficultyLessons: [
         {
           "id": 1,
           "title": "Cyrillic Alphabet",
@@ -100,9 +101,27 @@ export default {
           "id": 2,
           "title": "Personal Pronouns",
           "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
-          "time": 2,
+          "time": 5,
           "level": "Beginner/Intermediate",
           "link": "http://learnrusyn.xyz/#/lessons/personal-pronouns"
+        }
+      ],
+      timeLessons: [
+        {
+          "id": 2,
+          "title": "Personal Pronouns",
+          "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
+          "time": 5,
+          "level": "Beginner/Intermediate",
+          "link": "http://learnrusyn.xyz/#/lessons/personal-pronouns"
+        },
+        {
+          "id": 1,
+          "title": "Cyrillic Alphabet",
+          "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
+          "time": 15,
+          "level": "Beginner",
+          "link": "http://learnrusyn.xyz/#/lessons/cyrillic"
         }
       ],
       levels: [
@@ -113,15 +132,14 @@ export default {
     }
   },
   methods: {
-    handleSort: function(selection) {
-      switch(selection) {
-        case "Difficulty":
-          this.difficultySort();
-          break;
-        case "Time":
-          this.timeSort();
-          break;
-      };
+    swapSorting: function() {
+      if (this.sortBy == "Difficulty") {
+        this.sortBy = "Time";
+      } else if (this.sortBy == "Difficulty") {
+        this.sortBy = "Time";
+      } else {
+        this.sortBy = "Difficulty";
+      }
     },
     difficultySort: function() {
       var lessonList;
@@ -132,20 +150,40 @@ export default {
           };
         };
       };
-      this.lessons = lessonList;
+      return lessonList;
     },
     timeSort: function() {
-      var sorted = false;
-      while (!sorted) {
-        sorted = true;
-        for (let i = 0; i < this.lessons.length; i++) {
-          if (this.lessons[i].time > this.lessons[i+1].time) {
-            var temp = this.lessons[i];
-            this.lessons[i] = this.lessons[i+1];
-            this.lessons[i+1] = temp;
-          };
-        };
-      };
+      let arr = this.lessons;
+      for (var i = 0; i < arr.length; i++) {
+    
+        // Last i elements are already in place 
+        for (var j = 0; j < (arr.length - i -1); j++) {
+          
+          // Checking if the item at present iteration
+          // is greater than the next iteration
+          if (arr[j] > arr[j+1]) {
+            
+            // If the condition is true then swap them
+            var temp = arr[j]
+            arr[j] = arr[j+1]
+            arr[j+1] = temp
+          }
+        }
+      }
+      return arr;
+
+      // var sorted = false;
+      // while (!sorted) {
+      //   sorted = true;
+      //   for (let i = 0; i < this.lessons.length; i++) {
+      //     console.log(this.lessons[i].time);
+      //     if (this.lessons[i].time > this.lessons[i+1].time) {
+      //       var temp = this.lessons[i];
+      //       this.lessons[i] = this.lessons[i+1];
+      //       this.lessons[i+1] = temp;
+      //     };
+      //   };
+      // };
     },
     submitLesson: function() {
       // this.lessons.push(
@@ -184,7 +222,7 @@ export default {
     },
   },
   computed: {
-    cardWidth() {
+    cardWidth: function() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs': return 220
         case 'sm': return 400
@@ -193,7 +231,45 @@ export default {
         case 'xl': return 800
       }
     },
-  },
+    handleSort: function() {
+      switch (this.sortBy) {
+        case "Time":
+          return this.timeLessons;
+        case "Difficulty":
+          return this.difficultyLessons;
+      }
+    }
+
+
+      // var result;
+      // if (this.sortBy == undefined) {
+      //   this.sortedLessons = this.lessons;
+      // } else if (this.sortBy == "Difficulty") {
+      //   result = this.difficultySort();
+      // } else if (this.sortBy == "Time") {
+      //   result = this.timeSort();
+      // }
+      // return result;
+
+    //   switch (sortBy) {
+    //   case "Difficulty":
+    //     let resultDifficulty = this.difficultySort();
+    //     break;
+    //   case "Time":
+    //     let resultTime = this.timeSort();
+    //     break;
+    //   }
+    //   try {
+    //     return resultDifficulty;
+    //   } catch (error) {
+    //     try {
+    //       return resultTime;
+    //     } catch (error) {
+    //       return this.lessons
+    //     }
+    //   }
+    // }
+
   // mounted() {
   //   fetch("http://localhost:3000/lessons")
   //     .then(res => res.json())
@@ -204,5 +280,6 @@ export default {
   // firebase: {
   //   lessons: db.ref('0'),
   // },
-};
+  }
+}
 </script>
