@@ -17,7 +17,7 @@
 
 <style>
 .page1 {
-    background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0.7), rgba(255, 255, 255, 0)),
+    background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0.6), rgba(255, 255, 255, 0)),
     url(../assets/semetkovce.jpg);
     background-size: cover;
     height: 100%;
