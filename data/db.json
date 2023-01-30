@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Cyrillic Alphabet",
       "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
-      "time": 5,
+      "time": 15,
       "level": "Beginner",
       "link": "http://192.168.1.115:8080/#/lessons/cyrillic"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "title": "Personal Pronouns",
       "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
-      "time": 2,
+      "time": 5,
       "level": "Beginner/Intermediate",
       "link": "http://192.168.1.115:8080/#/lessons/personal-pronouns"
     }
