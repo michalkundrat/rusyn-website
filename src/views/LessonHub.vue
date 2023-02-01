@@ -98,6 +98,14 @@ export default {
           "link": "http://learnrusyn.xyz/#/lessons/cyrillic"
         },
         {
+          "id": 3,
+          "title": "Greetings",
+          "description": "Learn to greet people and how to initiate conversations with them",
+          "time": 10,
+          "level": "Beginner",
+          "link": "http://learnrusyn.xyz/#/lessons/greetings"
+        },
+        {
           "id": 2,
           "title": "Personal Pronouns",
           "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
@@ -114,6 +122,14 @@ export default {
           "time": 5,
           "level": "Beginner/Intermediate",
           "link": "http://learnrusyn.xyz/#/lessons/personal-pronouns"
+        },
+        {
+          "id": 3,
+          "title": "Greetings",
+          "description": "Learn to greet people and how to initiate conversations with them",
+          "time": 10,
+          "level": "Beginner",
+          "link": "http://learnrusyn.xyz/#/lessons/greetings"
         },
         {
           "id": 1,

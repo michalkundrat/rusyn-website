@@ -19,9 +19,9 @@
       <v-col cols="2">
         <v-img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
-          max-width="250px"
-          max-height="250px"
-          class="mb-n2"
+          max-width="200px"
+          max-height="200px"
+          class="ml-6 mb-n2"
         />
       </v-col>
       <v-col cols="2">

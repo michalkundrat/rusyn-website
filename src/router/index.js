@@ -7,6 +7,7 @@ import Contact from "../views/Contact.vue";
 import LessonHub from "../views/LessonHub.vue";
 import PersonalPronounsLesson from "../views/lessons/PersonalPronounsLesson.vue"
 import CyrillicLesson from "../views/lessons/CyrillicLesson.vue"
+import GreetingsLesson from "../views/lessons/GreetingsLesson.vue"
 
 Vue.use(VueRouter);
 
@@ -55,6 +56,11 @@ const routes = [
     path: "/lessons/cyrillic",
     name: "cyrillic",
     component: CyrillicLesson,
+  },
+  {
+    path: "/lessons/greetings",
+    name: "greetings",
+    component: GreetingsLesson,
   },
 ];
 
