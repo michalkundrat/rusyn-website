@@ -95,7 +95,7 @@ export default {
           "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
           "time": 15,
           "level": "Beginner",
-          "link": "http://learnrusyn.xyz/#/lessons/cyrillic"
+          "link": "http://learnrusyn.xyz/lessons/cyrillic"
         },
         {
           "id": 3,
@@ -103,7 +103,7 @@ export default {
           "description": "Learn to greet people and how to initiate conversations with them",
           "time": 10,
           "level": "Beginner",
-          "link": "http://learnrusyn.xyz/#/lessons/greetings"
+          "link": "http://learnrusyn.xyz/lessons/greetings"
         },
         {
           "id": 2,
@@ -111,7 +111,7 @@ export default {
           "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
           "time": 5,
           "level": "Beginner/Intermediate",
-          "link": "http://learnrusyn.xyz/#/lessons/personal-pronouns"
+          "link": "http://learnrusyn.xyz/lessons/personal-pronouns"
         }
       ],
       timeLessons: [
@@ -121,7 +121,7 @@ export default {
           "description": "Learn what a pronoun is and what the Rusyn personal pronouns are",
           "time": 5,
           "level": "Beginner/Intermediate",
-          "link": "http://learnrusyn.xyz/#/lessons/personal-pronouns"
+          "link": "http://learnrusyn.xyz/lessons/personal-pronouns"
         },
         {
           "id": 3,
@@ -129,7 +129,7 @@ export default {
           "description": "Learn to greet people and how to initiate conversations with them",
           "time": 10,
           "level": "Beginner",
-          "link": "http://learnrusyn.xyz/#/lessons/greetings"
+          "link": "http://learnrusyn.xyz/lessons/greetings"
         },
         {
           "id": 1,
@@ -137,7 +137,7 @@ export default {
           "description": "Learn to read and write in the Rusyn variant of the Cyrillic alphabet",
           "time": 15,
           "level": "Beginner",
-          "link": "http://learnrusyn.xyz/#/lessons/cyrillic"
+          "link": "http://learnrusyn.xyz/lessons/cyrillic"
         }
       ],
       levels: [

@@ -23,7 +23,7 @@
             <p class="body-1">{{ category.description }}</p>
 
             <!-- Need to make a makeColumn() or I can hard-code and just use row[0] -->
-            <v-row v-for="row in makeRows(category)" :key="row">
+            <v-row v-for="myrow in this.makeRows(category)" :key="row">
                 <v-col v-for="item in row" :key="item" justify="center" align="center" cols="2">
                     <p style="font-size: 2em;">{{ item.name }}</p>
                 </v-col>
@@ -85,12 +85,14 @@ export default {
             }
         };
     },
-    computed: {
-        makeRows(category) {
-            mylist = category.greetings;
+    methods: {
+        makeRows: function(cat) {
+            console.log("entered");
+            var mylist = cat.greetings;
             let rows = [];
             let count = 0;
             var row = [];
+            let item = 0;
             for (item in mylist) {
                 if (count > 2) {
                     row.push(item);
@@ -102,8 +104,11 @@ export default {
                     row.push(item);
                 }
             }
+            console.log(rows);
             return rows;
         },
+    },
+    computed: {
         handleRow: function() {
             if (itemsInRow < 2) {
                 itemsInRow++;
