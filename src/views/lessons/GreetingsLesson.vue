@@ -18,29 +18,26 @@
             and lesser-used greetings.
         </p>
 
-        <v-container v-for="category in this.greetingsList.categories" :key="category">
+        <v-container v-for="category of greetingsList.categories" :key="category">
             <p class="text-h5">{{ category.name }}</p>
             <p class="body-1">{{ category.description }}</p>
 
             <!-- Need to make a makeColumn() or I can hard-code and just use row[0] -->
-            <v-row v-for="myrow in this.makeRows(category)" :key="row">
-                <v-col v-for="item in row" :key="item" justify="center" align="center" cols="2">
-                    <p style="font-size: 2em;">{{ item.name }}</p>
+            <v-row v-for="myrow of makeRows(category)" :key="myrow">
+                <v-col justify="center" align="center" cols="2">
+                    <p class="pt-6" style="font-size: 2em;">{{ myrow[0].name }}</p>
+                    <p>{{ myrow[0].formality.toString().replace(/,/g, ', ') }}</p>
                 </v-col>
-                <v-col cols="3">
-                    <p class="text-body-1">{{ item.description }}</p>
+                <v-col cols="4">
+                    <p class="text-body-1">{{ myrow[0].description }}</p>
                 </v-col>
 
                 <v-col justify="center" align="center" cols="2">
-                    <p style="font-size: 5em;">Ґґ</p>
+                    <p class="pt-6" style="font-size: 2em;">{{ myrow[1].name }}</p>
+                    <p>{{ myrow[1].formality.toString().replace(/,/g, ', ') }}</p>
                 </v-col>
-                <v-col cols="3">
-                    <p class="text-body-1">
-                        This letter is very similar to the last one (see left).
-                        Therefore, if you learn the one before, you can just learn
-                        that the flick on the right side just makes the "h" sound harder - 
-                        making it into a "g".
-                    </p>
+                <v-col cols="4">
+                    <p class="text-body-1">{{ myrow[1].description }}</p>
                 </v-col>
             </v-row>
         </v-container>
@@ -78,6 +75,18 @@ export default {
                                     You should use Агойте in these more formal
                                     situations, or when talking to a family member
                                     who is more than a few years older than you.`
+                            },
+                            {
+                                name: "Вітай/Вітайте",
+                                formality: [formalityList[0], formalityList[1]],
+                                description:
+                                    `A greeting which can be used to greet friends,
+                                    family or other visitors. Its direct meaning is
+                                    "welcome", so if you greet someone with this,
+                                    it's likely that they will reply with "Дякую"
+                                    or "Дякуєме" depending on their status or how
+                                    many of them there are. These replies mean "thank
+                                    you".`
                             }
                         ]
                     }
@@ -87,22 +96,30 @@ export default {
     },
     methods: {
         makeRows: function(cat) {
-            console.log("entered");
             var mylist = cat.greetings;
             let rows = [];
             let count = 0;
             var row = [];
-            let item = 0;
-            for (item in mylist) {
-                if (count > 2) {
+            let item = {};
+            for (item of mylist) {
+                console.log(`Name: ${item.name}`);
+                console.log(`Formality: ${item.formality}`);
+                console.log(`Description: ${item.description}`);
+                if (count < 2) {
+                    console.log("count less than 2");
                     row.push(item);
                     count++;
                 } else {
                     count = 1;
                     rows.push(row);
+                    console.log("row: " + row.length);
                     row = [];
                     row.push(item);
+                    console.log("item" + item);
                 }
+            }
+            if (rows.length == 0) {
+                rows.push(row);
             }
             console.log(rows);
             return rows;
@@ -110,11 +127,11 @@ export default {
     },
     computed: {
         handleRow: function() {
-            if (itemsInRow < 2) {
-                itemsInRow++;
+            if (this.itemsInRow < 2) {
+                this.itemsInRow++;
                 return false;
             } else {
-                itemsInRow = 0;
+                this.itemsInRow = 0;
                 return true;
             }
         }

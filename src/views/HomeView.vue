@@ -6,7 +6,7 @@
                 Welcome to LearnRusyn, the place to learn the Rusyn language.
             </p>
             <p class="text-center text-md-h5">
-                Вітайте у LearnRusyn, містце де ся навчиете руснацкый язык.
+                Вітайте у LearnRusyn, містце де ся навчіете руснацкый язык.
             </p>
         </div>
         <!-- <div class="page2">
